@@ -20,7 +20,7 @@ class DriverLicenseUpdateForm(forms.ModelForm):
         if len(license_number) != self.LICENSE_LEN:
             raise forms.ValidationError(
                 f"Ensure that chars count "
-                f"{DriverLicenseUpdateForm .LICENSE_LEN}"
+                f"{DriverLicenseUpdateForm.LICENSE_LEN}"
             )
 
         letters_part = license_number[
@@ -33,13 +33,13 @@ class DriverLicenseUpdateForm(forms.ModelForm):
         if not (letters_part.isupper() and letters_part.isalpha()):
             raise forms.ValidationError(
                 f"Ensure that first "
-                f"{DriverLicenseUpdateForm .LICENSE_LEN_LETTERS_UPPER} "
+                f"{DriverLicenseUpdateForm.LICENSE_LEN_LETTERS_UPPER} "
                 f"chars must be upper chars"
             )
         if not digits_part.isdigit():
             raise forms.ValidationError(
                 f"Ensure that last "
-                f"{DriverLicenseUpdateForm .LICENSE_LEN_DIGITS} "
+                f"{DriverLicenseUpdateForm.LICENSE_LEN_DIGITS} "
                 f"chars must be digits"
             )
 
